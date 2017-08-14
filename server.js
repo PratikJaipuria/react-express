@@ -45,18 +45,18 @@ app.use(function(req, res, next) {
 // });
 
 router.get('/', function(req, res) {
-    console.log("We reached here");
+    // console.log("We reached here");
     res.json({ message: 'API Initialized!'});
 });
 
 router.route('/player')
 
     .post(function(req, res) {
-        console.log("We reached here @ POST");
+        // console.log("We reached here @ POST");
         var player = new Player();
-        console.log("POST", req.body);
+        // console.log("POST", req.body);
         (req.body.name) ? player.name = req.body.name : null;
-        (req.body.text) ? player.text = req.body.text : null;
+        (req.body.text) ? player.text = req.body.text : "NA";
 
         player.save(function(err) {
             if (err)
@@ -80,7 +80,7 @@ app.use('/api', router);
 
 // module.exports = app;
 
-var PORT = 9000;
+var PORT = 8081;
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);

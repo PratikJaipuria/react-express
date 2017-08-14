@@ -8,7 +8,7 @@ var Schema = mongoose.Schema;
 //the shape of your database entries.
 var PlayerSchema = new Schema({
     name: String,
-    text: String
+    won : String
 });
 
 //export our module to use in server.js

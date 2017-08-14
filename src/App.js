@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route , Link } from 'react-router-dom';
-import logo from './logo.svg'
+// import {BrowserRouter as Router, Route , Link } from 'react-router-dom';
+// import logo from './logo.svg'
 import './App.css';
-import {Home} from './Home';
 import Tile from "./Tile.js";
 import ResetButton from "./ResetButton.js";
 import Announcement from "./Announcement.js"
 
+
 export class App extends Component {
     constructor(){
         super();
-        this.state = {
+        this.state= {
             gameBoard: [
-                ' ',' ',' ',' ',' ',' ',' ',' ',' '
-                ,' ',
-                ' ',' ',' ',
-                ' ',' ',
-                ' ',' ',' ',
-                ' ',' ',
-                ' ',' ',' ',
-                ' ',' '
+                ' ',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' ',
+                ' ',' ',' ',' ',' '
             ],
 
             winner: null,
@@ -50,7 +47,7 @@ export class App extends Component {
 
 
     tie(board){
-        var moves = board.join('').replace(/ /g, '');
+        var moves= board.join('').replace(/ /g, '');
         if(moves.length === 25){
             return true;
         }
@@ -58,14 +55,6 @@ export class App extends Component {
     }
     winner(board,player) {
         if (
-            // (board[0] === player && board[1] === player && board[2] === player) ||
-        // (board[3] === player && board[4] === player && board[5] === player) ||
-        // (board[6] === player && board[7] === player && board[8] === player) ||
-        // (board[0] === player && board[3] === player && board[6] === player) ||
-        // (board[1] === player && board[4] === player && board[7] === player) ||
-        // (board[2] === player && board[5] === player && board[8] === player) ||
-        // (board[0] === player && board[4] === player && board[8] === player) ||
-        // (board[2] === player && board[4] === player && board[6] === player)
 
         (board[0] === player && board[1] === player && board[2] === player && board[3] === player && board[4] === player) ||
         (board[5] === player && board[6] === player && board[7] === player && board[8] === player && board[9] === player) ||
@@ -102,7 +91,7 @@ export class App extends Component {
     }
 
     findAiMove(board) {
-        var bestMoveScore = 9999;
+        // var bestMoveScore = 9999;
         var move = null;
         var alpha = 9999;
         var beta = -9999;
@@ -115,10 +104,8 @@ export class App extends Component {
             if(newBoard){
                 var moveScore = this.maxScore(newBoard,alpha,beta);
                 if(moveScore <  alpha){
-                    // beta = moveScore;
-                    alpha = moveScore;
-                    console.log("move score/ beta value", moveScore);
-                    move = i;
+                   alpha = moveScore;
+                   move = i;
                 }
             }
         }
@@ -147,7 +134,7 @@ export class App extends Component {
                     }
 
                     if(bestMoveScore < alpha){
-                        console.log("minScore",bestMoveScore);
+
                         return bestMoveScore;
                     }
                     if(bestMoveScore < beta ){
@@ -182,7 +169,6 @@ export class App extends Component {
                     }
 
                     if(bestMoveScore > beta){
-                        console.log("maxScore",bestMoveScore);
                         return bestMoveScore;
                     }
                     if (bestMoveScore > alpha){
@@ -238,14 +224,10 @@ export class App extends Component {
 
     render(){
         return (
-            <Router>
+
             <div className="container">
                 <div className="menu">
                     <h1 className="pink">Tic Tac Toe</h1>
-             <Link to="/home" >HOME</Link>
-                    <Route exact={true} path="/home" render={() => (
-                        <h1>Welcome</h1>
-                    )}/>
                     <Announcement winner={this.state.winner} />
                     <ResetButton reset={this.resetBoard.bind(this)}/>
                 </div>
@@ -259,7 +241,7 @@ export class App extends Component {
                     );
                 }.bind(this))}
              </div>
-            </Router>
+
         );
     }
 }

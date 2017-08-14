@@ -39,17 +39,18 @@ class Home extends Component {
             });
     }
 
+
     componentDidMount() {
-        this.loadCommentsFromServer();
-        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-    }
+                this.loadCommentsFromServer();
+                // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+           }
 
     render(){
         return(
             <Router>
             <div>
 
-                <h1>HOME PAGE</h1>
+                <h1>Welcome</h1>
                 <CommentForm onCommentSubmit={ this.handleCommentSubmit }/>
                     <Link to="/play">Play the GAME</Link>
                     <Route path={"/play"} component={App}> </Route>
