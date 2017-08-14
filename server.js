@@ -13,7 +13,7 @@ var router = express.Router();
 // Setup logger
 // app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
-var mongoDB = 'mongodb://127.0.0.1:27017/reactExpress';
+var mongoDB = 'mongodb://<dbuser>:<dbpassword>@ds151108.mlab.com:51108/heroku_svls88p3';
 mongoose.connect(mongoDB, { useMongoClient: true })
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
