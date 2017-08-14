@@ -11,9 +11,9 @@ var Player = require('../model/player');
 var app = express();
 var router = express.Router();
 // Setup logger
-// app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
-var mongoDB = 'mongodb://127.0.0.1:27017/reactExpress';
+
+var mongoDB = 'mongodb://127.0.0.1:27017/reactExpres';
 mongoose.connect(mongoDB, { useMongoClient: true })
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
