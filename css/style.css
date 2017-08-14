@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Roboto");
+@keyframes bounce {
+  0% {
+    top: -10000px;
+  }
+  33% {
+    top: 20px;
+  }
+  66% {
+    top: -20px;
+  }
+  100% {
+    top: 0;
+  }
+}
+body {
+  background-color: white;
+}
+
+.game .whosTurn {
+  width: 660px;
+  height: 50px;
+  text-align: center;
+  font-family: 'indie flower';
+  font-size: 2em;
+  text-transform: uppercase;
+  line-height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F67D72;
+  color: white;
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  text-shadow: 1px 1px 3px #A2291E;
+}
+.game .whosTurn.bottom {
+  cursor: pointer;
+}
+.game .whosTurn .reset {
+  cursor: pointer;
+  color: gold;
+  text-shadow: 0px 0px 3px #A2291E;
+  transition: all 0.3s ease-in-out;
+}
+.game .whosTurn .reset:hover {
+  color: black;
+}
+.game .whosTurn a {
+  text-decoration: none;
+  color: white;
+}
+.game .whosTurn a:hover {
+  color: black;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 600px;
+  background-color: #6C9F28;
+  padding: 30px;
+  font-size: 5em;
+  font-family: 'indie flower';
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px #366900;
+}
+.board h2 {
+  margin: 0;
+}
+.board h2 span {
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #F67D72;
+  text-transform: uppercase;
+  animation: bounce 1s;
+}
+.board .mode {
+  font-size: 0.5em;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.board .mode .one,
+.board .mode .two {
+  width: 150px;
+  border: 3px dashed white;
+  border-radius: 20px;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+.board .mode .one:hover,
+.board .mode .two:hover {
+  cursor: pointer;
+  color: gold;
+  text-shadow: 0px 0px 3px black;
+}
+.board .square {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border-right: 5px solid white;
+  border-bottom: 5px solid white;
+  text-align: center;
+  font-size: 2em;
+  line-height: 200px;
+  font-family: 'indie flower';
+  color: white;
+}
+.board .square.win {
+  background-color: #B34EE9;
+}
+.board .square:nth-child(3n+3) {
+  border-right: none;
+}
+.board .square:nth-child(n+7) {
+  border-bottom: none;
+}

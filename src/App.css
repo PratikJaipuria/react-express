@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.App-intro {
+  font-size: large;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.container{
+  width: 950px;
+  margin: 0 auto;
+}
+.menu{
+  text-align: center;
+  width: 90%;
+}
