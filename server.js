@@ -13,8 +13,8 @@ var router = express.Router();
 // Setup logger
 // app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
-// var mongoDB = 'mongodb://<dbuser>:<dbpassword>@ds151108.mlab.com:51108/heroku_svls88p3';
-var mongoDB = 'mongodb://127.0.0.1:27017/reactExpres';
+var mongoDB = 'mongodb://<dbuser>:<dbpassword>@ds151108.mlab.com:51108/heroku_svls88p3';
+// var mongoDB = 'mongodb://127.0.0.1:27017/reactExpres';
 mongoose.connect(mongoDB, { useMongoClient: true })
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -80,7 +80,7 @@ app.use('/api', router);
 
 // module.exports = app;
 
-var PORT = 8081;
+var PORT = process.env.PORT || 8081;
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);

@@ -22,8 +22,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-dev": "nf start -p 8080",
-    "deploy": "gcloud app deploy  --project mern-tic-tac-toe",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
 
