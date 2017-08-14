@@ -51,7 +51,7 @@ class Home extends Component {
 
                 <h1>HOME PAGE</h1>
                 <CommentForm onCommentSubmit={ this.handleCommentSubmit }/>
-                    {/*<Link to="/play">Play the GAME</Link>*/}
+                    <Link to="/play">Play the GAME</Link>
                     <Route path={"/play"} component={App}> </Route>
 
             </div>
