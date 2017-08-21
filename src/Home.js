@@ -4,6 +4,7 @@ import { browserHistory} from 'react-router';
 import axios from 'axios';
 import {App} from "./App";
 import CommentForm from './CommentForm';
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +55,6 @@ class Home extends Component {
                 <CommentForm onCommentSubmit={ this.handleCommentSubmit }/>
                     <Link to="/play">Play the GAME</Link>
                     <Route path={"/play"} component={App}> </Route>
-
             </div>
             </Router>
 

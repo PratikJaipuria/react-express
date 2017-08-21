@@ -31,8 +31,7 @@ import Home from './Home';
 //
 ReactDOM.render(
     <Home
-        url='http://localhost:8081/api/player'
-        pollInterval={2000} />,
+        url='http://localhost:8081/api/player'/>,
     document.getElementById('root')
 );
 

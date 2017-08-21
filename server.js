@@ -49,6 +49,13 @@ router.get('/', function(req, res) {
     res.json({ message: 'API Initialized!'});
 });
 
+router.route('/userInstances')
+    .post(function (req,res) {
+        console.log("User instances ",req.body);
+        res.json({ message: 'Player successfully added!' });
+    });
+
+
 router.route('/player')
 
     .post(function(req, res) {
@@ -80,8 +87,8 @@ app.use('/api', router);
 
 // module.exports = app;
 
-var PORT = process.env.PORT || 8081;
-
+// var PORT = process.env.PORT || 8081;
+var PORT = 8081;
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
 });
